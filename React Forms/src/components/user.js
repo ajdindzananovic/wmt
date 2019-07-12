@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import FormFields from "../components/widgets/Forms/formFields";
+import { firebaseDB } from "../firebase";
 
 class User extends Component {
   state = {
@@ -82,7 +83,7 @@ class User extends Component {
   };
 
   submitForm = event => {
-    event.preventDefault();
+    // event.preventDefault();
 
     let dataToSubmit = {};
     let formIsValid = true;
@@ -95,7 +96,15 @@ class User extends Component {
       formIsValid = this.state.formData[key].valid && formIsValid;
     }
     if (formIsValid) {
-      console.log(dataToSubmit);
+      firebaseDB
+        .ref("users")
+        .push(dataToSubmit)
+        .then(() => {
+          console.log("new user added");
+        })
+        .catch(e => {
+          console.log(e);
+        });
     }
   };
   render() {
