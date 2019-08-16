@@ -3,5 +3,6 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import "bootstrap/dist/css/bootstrap.css";
+import LoginForm from "./_components/_forms/loginForm";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<LoginForm />, document.getElementById("root"));
