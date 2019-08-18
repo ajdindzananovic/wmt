@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import Logo from "../../images/logo.png";
 import { Link, Route, BrowserRouter as Router } from "react-router-dom";
 
-import WebSite from "../_webSite/WebSite";
+import loginForm from "../_forms/loginForm";
+import Body from "./Body";
 
 export default class Header extends Component {
   render() {
@@ -27,10 +28,10 @@ export default class Header extends Component {
               <div className="collapse navbar-collapse" id="myNavbar">
                 <ul className="nav navbar-nav">
                   <li className="active">
-                    <a href="#">Home</a>
+                    <Link to="/">Home</Link>
                   </li>
                   <li>
-                    <Link ŧø="/Website">Web Site</Link>
+                    <Link to="/website">Web Site</Link>
                   </li>
                   <li>
                     <Link to="/tasks">Tasks</Link>
@@ -41,16 +42,23 @@ export default class Header extends Component {
                 </ul>
                 <ul className="nav navbar-nav navbar-right">
                   <li>
-                    <a href="#">
+                    <Link to="/login">
                       <span className="glyphicon glyphicon-log-in" /> Login
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
             </div>
           </nav>
 
-          <Route path="/website" component={WebSite} />
+          <Route path="/login" component={loginForm} />
+          <Route exact path="/" render={() => <Body pathName="/home" />} />
+          <Route path="/website" render={() => <Body pathName="/website" />} />
+          <Route path="/tasks" render={() => <Body pathName="/tasks" />} />
+          <Route
+            path="/projects"
+            render={() => <Body pathName="/projects" />}
+          />
         </Router>
       </React.Fragment>
     );

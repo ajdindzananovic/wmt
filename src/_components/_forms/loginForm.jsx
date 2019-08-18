@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 import Form from "../common/form";
 
@@ -13,11 +13,15 @@ class LoginForm extends Form {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        {this.renderInput("Username", "text", "Username")}
-        {this.renderInput("Password", "password", "Password")}
-        {this.randerButton("Login")}
-      </form>
+      <div className="container-fluid text-center">
+        <div className="row content">
+          <form onSubmit={this.handleSubmit}>
+            {this.renderInput("Username", "text", "Username")}
+            {this.renderInput("Password", "password", "Password")}
+            {this.randerButton("Login")}
+          </form>
+        </div>
+      </div>
     );
   }
 }

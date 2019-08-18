@@ -1,38 +1,35 @@
 import React, { Component } from "react";
+import WebSite from "../_webSite/WebSite";
+import { routes } from "./routes";
+import WebSiteTasks from "../WebSiteTasks/WebSiteTasks";
+import WebSiteProjects from "../WebSiteProjects/WebSiteProjects";
 
 export default class Body extends Component {
+  renderSwitch = () => {
+    switch (this.props.pathName) {
+      case "/webSite":
+        return <WebSite />;
+      case "/task":
+        return <WebSiteTasks />;
+      case "/project":
+        return <WebSiteProjects />;
+
+      default:
+        break;
+    }
+  };
   render() {
+    console.log(routes.path);
     return (
       <div className="container-fluid text-center">
         <div className="row content">
           <div className="col-sm-2 sidenav">
-            <p>
-              <a href="#">Link</a>
-            </p>
-            <p>
-              <a href="#">Link</a>
-            </p>
-            <p>
-              <a href="#">Link</a>
-            </p>
+            {routes.map(route => {
+              return route.path === this.props.pathName ? route.sidebar : null;
+            })}
           </div>
-          <div className="col-sm-8 text-left">
-            <h1>Welcome</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat
-              cupidatat non proident, sunt in culpa qui officia deserunt mollit
-              anim id est laborum consectetur adipiscing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-              minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-              aliquip ex ea commodo consequat.
-            </p>
-            <hr />
-            <h3>Test</h3>
-            <p>Lorem ipsum...</p>
-          </div>
+
+          <div className="col-sm-8 text-left">{this.renderSwitch()}</div>
         </div>
       </div>
     );
