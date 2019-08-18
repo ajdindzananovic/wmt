@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Joi from "joi-browser";
 import mainLogo from "../../images/logo.png";
 
@@ -23,7 +23,6 @@ class LoginForm extends Form {
   };
 
   render() {
-    const { data, errors } = this.state;
     return (
       <div className="container">
         <div className="row">
