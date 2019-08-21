@@ -6,14 +6,14 @@ const route = [
     path: "/website",
     sidebar: (
       <ul>
-        <li key="websiteinfo">
-          <Link to="/websiteinfo">Web Site Info</Link>
+        <li key="domainInfoForm">
+          <Link to="/domainInfoForm">Domain info 2</Link>
         </li>
         <li key="credentials">
-          <Link to="/credentials">Credentials</Link>
+          <Link to="/credentials">Credentials 2</Link>
         </li>
         <li key="status">
-          <Link to="/status">Status</Link>
+          <Link to="/status">Status2 </Link>
         </li>
       </ul>
     )

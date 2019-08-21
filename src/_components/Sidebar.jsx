@@ -26,7 +26,7 @@ export default class Sidebar extends Component {
     return (
       <div className="container-fluid text-center">
         <div className="row content">
-          <div className="col-sm-2 sidenav">
+          <div className="col-2 sidenav">
             {this.props.state.currentLocation === "/website"
               ? this.renderDropDownButton()
               : null}
@@ -37,7 +37,7 @@ export default class Sidebar extends Component {
                 : null
             )}
           </div>
-          <div className="col-sm-8 text-left">
+          <div className="col-10 text-left">
             <Routes />
           </div>
         </div>

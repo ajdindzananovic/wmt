@@ -26,9 +26,7 @@ textarea.form-control,
 input.form-control {
   font-size: 16px;
 }
-input[type="file"] {
-  width: 100%;
-}
+
 .form-signin {
   max-width: 330px;
   padding: 15px;
@@ -38,7 +36,7 @@ input[type="file"] {
   margin-bottom: 10px;
 }
 
-.form-signin .form-control {
+.form-signin {
   position: relative;
   font-size: 16px;
   height: auto;
@@ -47,15 +45,15 @@ input[type="file"] {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.form-signin .form-control:focus {
+.form-signin {
   z-index: 2;
 }
-.form-signin input[type="text"] {
+.form-signin {
   margin-bottom: -1px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
-.form-signin input[type="password"] {
+.form-signin {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -74,6 +72,7 @@ input[type="file"] {
   font-weight: 400;
   display: block;
 }
+/*
 .profile-img {
   width: 96px;
   height: 96px;
@@ -81,3 +80,4 @@ input[type="file"] {
   display: block;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
+} */
