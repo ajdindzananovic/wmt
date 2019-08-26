@@ -14,7 +14,7 @@ export default () => {
       <Route path="/website" component={props => <Home {...props} />} />
 
       <Route path="/status" component={Status} />
-      <Route path="/domainInfoForm" component={DomainInfoForm} />
+      <Route path="website/domainInfoForm" component={DomainInfoForm} />
 
       <Route path="/taskOne" component={TaskOne} />
 

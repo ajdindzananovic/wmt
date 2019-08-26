@@ -81,3 +81,17 @@ input.form-control {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
 } */
+
+.status-table {
+  padding-top: 50px;
+}
+
+.modalContent {
+  padding: 100px;
+  display: block;
+  box-sizing: border-box;
+}
+
+.statusTitle {
+  padding-top: 20px;
+}

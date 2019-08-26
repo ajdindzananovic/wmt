@@ -7,13 +7,13 @@ const route = [
     sidebar: (
       <ul>
         <li key="domainInfoForm">
-          <Link to="/domainInfoForm">Domain info 2</Link>
+          <Link to="/domainInfoForm">Domain info</Link>
         </li>
         <li key="credentials">
-          <Link to="/credentials">Credentials 2</Link>
+          <Link to="/credentials">Credentials</Link>
         </li>
         <li key="status">
-          <Link to="/status">Status2 </Link>
+          <Link to="/status">Status</Link>
         </li>
       </ul>
     )
