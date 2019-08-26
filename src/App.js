@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 
-import "./App.css";
-
 import { Nav, Navbar } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
-import Sidebar from "./_components/Sidebar";
+
+import MainRoute from "./_components/mainRoute";
+
+import "./css/App.css";
 
 class App extends Component {
   constructor(props) {
@@ -24,27 +25,22 @@ class App extends Component {
     return (
       <div className="App container">
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-          <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+          <Navbar.Brand>
+            <LinkContainer to="/">
+              <Nav.Link>React-Bootstrap</Nav.Link>
+            </LinkContainer>
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
-              <LinkContainer
-                to="/website"
-                onSelect={() => this.handleChnageLocation("/website")}
-              >
+              <LinkContainer to="/website">
                 <Nav.Link>Web Site</Nav.Link>
               </LinkContainer>
-              <LinkContainer
-                to="/task"
-                onSelect={() => this.handleChnageLocation("/task")}
-              >
+              <LinkContainer to="/task">
                 <Nav.Link>Tasks</Nav.Link>
               </LinkContainer>
 
-              <LinkContainer
-                to="/project"
-                onSelect={() => this.handleChnageLocation("/project")}
-              >
+              <LinkContainer to="/project">
                 <Nav.Link>Projects</Nav.Link>
               </LinkContainer>
             </Nav>
@@ -59,7 +55,7 @@ class App extends Component {
           </Navbar.Collapse>
         </Navbar>
 
-        <Sidebar state={this.state} />
+        <MainRoute />
       </div>
     );
   }

@@ -54,7 +54,7 @@ export default class PopUpModalContent extends Component {
           <button
             type="cancel"
             className="btn btn-outline-secondary"
-            onClick={this.props.goBack}
+            onClick={this.props.closeModal}
           >
             Cancel
           </button>

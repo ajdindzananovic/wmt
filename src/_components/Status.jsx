@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-
+import { withRouter } from "react-router-dom";
 import TableBody from "./common/status_table_body";
 import Modal from "react-awesome-modal";
 import PopUpModalContent from "./common/PopUpModalContent";
 import moment from "moment";
 
-export default class Status extends Component {
+class Status extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -28,7 +28,9 @@ export default class Status extends Component {
   };
 
   goBack = () => {
-    window.history.back();
+    this.setState({
+      visible: false
+    });
   };
 
   handleEditIdClick = item => {
@@ -63,10 +65,6 @@ export default class Status extends Component {
   };
 
   render() {
-    let search = new URLSearchParams(this.props.location.search);
-    let name = search.get("statis") || "";
-    console.log(search);
-    console.log(name);
     return (
       <div>
         <h2 className="statusTitle">Welcome to status</h2>
@@ -87,7 +85,6 @@ export default class Status extends Component {
             </thead>
             <TableBody
               openModal={this.openModal}
-              closeModal={this.closeModal}
               goBack={this.goBack}
               editIdState={this.state.editId}
               handleEditIdClick={this.handleEditIdClick}
@@ -107,6 +104,7 @@ export default class Status extends Component {
                 handleInputChange={this.handleChange}
                 dateChange={this.dateChange}
                 onHandleSubmit={this.onHandleSubmit}
+                closeModal={this.closeModal}
               />
             </Modal>
           </div>
@@ -115,3 +113,5 @@ export default class Status extends Component {
     );
   }
 }
+
+export default withRouter(Status);
