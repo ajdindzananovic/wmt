@@ -27,7 +27,7 @@ class LoginForm extends Form {
       <div className="container">
         <div className="row">
           <div className="col-sm-6 col-md-4 col-md-offset-4">
-            <h1 className="text-center login-title">Login</h1>
+            <h1 className="text-center login-title">Login Form</h1>
             <div className="account-wall">
               <img className="profile-img" src={mainLogo} alt="" />
               <form onSubmit={this.handleSubmit} className="form-signin">
