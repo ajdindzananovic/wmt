@@ -11,7 +11,7 @@ class Status extends Component {
     this.state = {
       visible: false,
       object: {},
-      datum: ""
+      datum: new Date()
     };
   }
 
@@ -35,10 +35,10 @@ class Status extends Component {
 
   handleEditIdClick = item => {
     this.setState({
-      object: item
+      object: item,
+      datum: moment(item.date, "DD-MM-YYYY").toDate()
     });
   };
-
   handleChange = event => {
     this.setState({
       object: event.target.value
@@ -48,15 +48,18 @@ class Status extends Component {
   dateChange = date => {
     this.setState({
       object: {
-        date: moment(date).format("YYYY-MM-DD")
-      }
+        date: moment(date).format("DD-MM-YYYY")
+      },
+      datum: moment(date).toDate()
     });
   };
   onHandleSubmit = event => {
     event.preventDefault();
     console.log(moment(this.state.object.date).format("DD-MM-YYYY"));
     this.setState({
-      datum: moment(this.state.object.date).format("DD-MM-YYYY")
+      object: {
+        date: moment(this.state.object.date).format("DD-MM-YYYY")
+      }
     });
   };
 

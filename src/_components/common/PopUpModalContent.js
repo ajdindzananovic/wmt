@@ -21,7 +21,7 @@ export default class PopUpModalContent extends Component {
           <div className="form-group">
             <DatePicker
               dateFormat="dd-MM-yyyy"
-              selected={moment(this.props.state.object.date).toDate()}
+              selected={moment(this.props.state.datum).toDate()}
               onChange={this.props.dateChange}
             />
           </div>
