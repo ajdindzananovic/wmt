@@ -17,13 +17,13 @@ export default class ContentRoute extends Component {
           render={() => {
             switch (this.props.location) {
               case "/website":
-                return <WebSiteHome />;
+                return <WebSiteHome state={this.props.state}/>;
               case "/website/domaininfo":
-                return <DomainInfo />;
+                return <DomainInfo state={this.props.state}/>;
               case "/website/status":
-                return <Status />;
+                return <Status state={this.props.state} />;
               case "/website/credentials":
-                return <Credentials />;
+                return <Credentials state={this.props.state}/>;
               case "/task/taskone":
                 return <TaskOne />;
 

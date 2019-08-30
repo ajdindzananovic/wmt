@@ -5,38 +5,41 @@ import Modal from "react-awesome-modal";
 import PopUpModalContent from "./common/PopUpModalContent";
 import moment from "moment";
 
+
+
 class Status extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      visible: false,
-      object: {},
-      datum: new Date()
+      visibleModal: false,
+      activityData: {},
+      datePickerDate: new Date()
     };
   }
 
   openModal = () => {
     this.setState({
-      visible: true
+      visibleModal: true
     });
   };
 
   closeModal = () => {
     this.setState({
-      visible: false
+      visibleModal: false
     });
   };
 
   goBack = () => {
     this.setState({
-      visible: false
+      visibleModal: false
     });
   };
 
   handleEditIdClick = item => {
     this.setState({
-      object: item,
-      datum: moment(item.date, "DD-MM-YYYY").toDate()
+      activityData: item,
+      datePickerDate: moment(item.date, "DD-MM-YYYY").toDate()
     });
   };
   handleChange = event => {
@@ -50,17 +53,11 @@ class Status extends Component {
       object: {
         date: moment(date).format("DD-MM-YYYY")
       },
-      datum: moment(date).toDate()
+      datePickerDate: date
     });
   };
   onHandleSubmit = event => {
     event.preventDefault();
-    console.log(moment(this.state.object.date).format("DD-MM-YYYY"));
-    this.setState({
-      object: {
-        date: moment(this.state.object.date).format("DD-MM-YYYY")
-      }
-    });
   };
 
   handleDeleteClick = () => {
@@ -96,7 +93,7 @@ class Status extends Component {
           </table>
           <div>
             <Modal
-              visible={this.state.visible}
+              visible={this.state.visibleModal}
               width="900"
               height="700"
               effect="fadeInUp"

@@ -3,6 +3,7 @@ import DatePicker from "react-datepicker";
 import moment from "moment";
 
 import "react-datepicker/dist/react-datepicker.css";
+import "../../css/datePicker.css";
 
 export default class PopUpModalContent extends Component {
   render() {
@@ -15,13 +16,15 @@ export default class PopUpModalContent extends Component {
             <input
               type="text"
               className="form-control"
-              value={this.props.state.object.id}
+              value={this.props.state.activityData.id}
             />
           </div>
           <div className="form-group">
+          <label>Datum</label>
             <DatePicker
               dateFormat="dd-MM-yyyy"
-              selected={moment(this.props.state.datum).toDate()}
+              className="form-control"
+              selected={this.props.state.datePickerDate}
               onChange={this.props.dateChange}
             />
           </div>
@@ -31,7 +34,7 @@ export default class PopUpModalContent extends Component {
             <input
               type="text"
               className="form-control"
-              value={this.props.state.object.activity}
+              value={this.props.state.activityData.activity}
               onChange={this.props.dateChange}
             />
           </div>
@@ -40,7 +43,7 @@ export default class PopUpModalContent extends Component {
             <input
               type="text"
               className="form-control"
-              value={this.props.state.object.description}
+              value={this.props.state.activityData.description}
               onChange={this.props.handleInputChange}
             />
           </div>
