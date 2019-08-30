@@ -91,6 +91,7 @@ class DomainInfo extends Form {
   }
 
   handleDateChangeRaw = e => {
+    // so user can't enter data manualy
     e.preventDefault();
   };
 
