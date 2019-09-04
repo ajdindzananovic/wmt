@@ -1,6 +1,7 @@
 import moment from "moment";
+import { saveDomain } from "../_services/domainServices";
 
-export function saveDomainInfoFormToDatabase(
+export async function saveDomainInfoFormToDatabase(
   siteRegistredFromDate,
   endOfActivityDate,
   siteName,
@@ -21,8 +22,16 @@ export function saveDomainInfoFormToDatabase(
   // let testDatum = moment.(siteRegistredFromDate);
   console.log("testDatum");
   console.log(testDatum);
-
+  const allData = {
+    siteName,
+    siteRegistredFromDate,
+    endOfActivityDate,
+    domainOwner,
+    personForPayment,
+    personForAdministration
+  };
   //axios(tstdatum,siteName,domainOwner)
+  await saveDomain(allData);
 }
 
 export function getDomainInfoDataFromDatabase() {

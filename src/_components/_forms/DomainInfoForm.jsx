@@ -1,6 +1,6 @@
 import React from "react";
 import Joi from "joi-browser";
-
+import { saveDomain } from "../_services/domainServices";
 import Form from "../common/form";
 
 class DomainInfoForm extends Form {
@@ -36,9 +36,10 @@ class DomainInfoForm extends Form {
       .required()
       .label("personForAdministration")
   };
-  doOnSubmit = () => {
-    // call server
-    console.log("submitted");
+
+  doOnSubmit = async () => {
+    await saveDomain(this.state.data);
+    console.log("submit -klik");
   };
 
   render() {

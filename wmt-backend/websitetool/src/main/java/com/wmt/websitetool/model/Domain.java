@@ -13,9 +13,9 @@ public class Domain {
 	@GeneratedValue
 	private Long id;
 	
-	private String domainName;
-	private  Date domainRegDate;
-	private Date domainEndOfActivity;
+	private String siteName;
+	private  Date siteRegistredFromDate;
+	private Date endOfActivityDate;
 	private String  domainOwner;
 	private String personForPayment;
 	private String personForAdministration;
@@ -25,23 +25,23 @@ public class Domain {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getDomainName() {
-		return domainName;
+	public String getSiteName() {
+		return siteName;
 	}
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
+	public void setSiteName(String siteName) {
+		this.siteName = siteName;
 	}
-	public Date getDomainRegDate() {
-		return domainRegDate;
+	public Date getSiteRegistredFromDate() {
+		return siteRegistredFromDate;
 	}
-	public void setDomainRegDate(Date domainRegDate) {
-		this.domainRegDate = domainRegDate;
+	public void setSiteRegistredFromDate(Date siteRegistredFromDate) {
+		this.siteRegistredFromDate = siteRegistredFromDate;
 	}
-	public Date getDomainEndOfActivity() {
-		return domainEndOfActivity;
+	public Date getEndOfActivityDate() {
+		return endOfActivityDate;
 	}
-	public void setDomainEndOfActivity(Date domainEndOfActivity) {
-		this.domainEndOfActivity = domainEndOfActivity;
+	public void setEndOfActivityDate(Date endOfActivityDate) {
+		this.endOfActivityDate = endOfActivityDate;
 	}
 	public String getDomainOwner() {
 		return domainOwner;
@@ -61,6 +61,7 @@ public class Domain {
 	public void setPersonForAdministration(String personForAdministration) {
 		this.personForAdministration = personForAdministration;
 	}
+	
 	
 	
 	
